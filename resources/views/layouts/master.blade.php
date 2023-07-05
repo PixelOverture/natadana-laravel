@@ -8,9 +8,13 @@
     @include('includes.style')
 </head>
 <body>
-    @include('partials.navbar')
+    @if (!request()->is('login') && !request()->is('register'))
+        @include('partials.navbar')
+    @endif
     @yield('content')
-    @include('partials.footer')
+    @if (!request()->is('login') && !request()->is('register'))
+        @include('partials.footer')
+    @endif
     @include('includes.script')
 </body>
 </html>

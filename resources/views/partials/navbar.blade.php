@@ -23,8 +23,8 @@
                     <a class="nav-link" href="#">Bahasa</a>
                 </li>
             </ul>
-            <a href="/login.html" class="nav-link">Masuk</a>
-            <a href="" class="ms-lg-4 btn btn-main">Daftar</a>
+            <a href="{{ route('login') }}" class="nav-link">Masuk</a>
+            <a href="{{ route('register') }}" class="ms-lg-4 btn btn-main">Daftar</a>
         </div>
     </div>
 </nav>
