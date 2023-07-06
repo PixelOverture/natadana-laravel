@@ -16,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.landing');
+})->name('landing');
+
+Route::get('/email', function () {
+    return view('email.emailVerification');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/email-verify/{email}', [Auth::class, 'emailVerify'])->name('email.verify');
+Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register');

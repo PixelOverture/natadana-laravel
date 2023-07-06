@@ -10,7 +10,8 @@
                         <h3>Buat akun</h3>
                         <p>Buat akun untuk akses iAdmin</p>
                     </div>
-                    <form action="#" method="post">
+                    <form action="{{ route('post.register') }}" method="post">
+                        @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
                             <input type="text" class="form-control" id="name" name="name"
@@ -44,7 +45,7 @@
                                 </label>
                             </div>
                         </div>
-                        <button class="btn btn-warning" type="submit">Sign in</button>
+                        <button class="btn btn-warning" type="submit">Daftar</button>
                     </form>
                     <div class="new-user text-center">
                         <p>
