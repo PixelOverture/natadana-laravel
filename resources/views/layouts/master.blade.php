@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Natadana | @yield('title')</title>
     @include('includes.style')
+    @stack('addon-style')
 </head>
 <body>
     @if (!request()->is('login') && !request()->is('register'))
@@ -16,5 +17,6 @@
         @include('partials.footer')
     @endif
     @include('includes.script')
+    @stack('addon-script')
 </body>
 </html>

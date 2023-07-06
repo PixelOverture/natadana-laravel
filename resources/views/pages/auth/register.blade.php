@@ -6,6 +6,14 @@
         <div class="row align-items-center" id="form">
             <div class="col-lg-6">
                 <div class="auth-form mx-auto">
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible show fade">
+                        <div class="alert-body">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            {{ $message }}
+                        </div>
+                    </div>
+                    @endif
                     <div class="heading text-center">
                         <h3>Buat akun</h3>
                         <p>Buat akun untuk akses iAdmin</p>

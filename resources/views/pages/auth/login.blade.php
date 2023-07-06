@@ -1,6 +1,14 @@
 @extends('layouts.master')
 @section('title', 'Login')
 
+@push('addon-style')
+    <style>
+        #show_eye, #hide_eye {
+            width: 20px;
+        }
+    </style>
+@endpush
+
 @section('content')
     <section class="auth">
         <div class="row align-items-center">
@@ -42,8 +50,16 @@
                         </div>
                         <div class="mb-4">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password"
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Masukan password anda" />
+                                <span class="input-group-text" onclick="password_show_hide();">
+                                    <img src="{{ URL::asset('assets/images/ic_eye.svg') }}" alt="" id="show_eye">
+                                    <img class="d-none" src="{{ URL::asset('assets/images/ic_eye_off.svg') }}" alt="" id="hide_eye">
+                                    {{-- <i class="fas fa-eye" id="show_eye"></i>
+                                    <i class="fas fa-eye-slash d-none" id="hide_eye"></i> --}}
+                                </span>
+                            </div>
                         </div>
                         <div class="link d-flex justify-content-between">
                             <div class="form-check">
@@ -69,3 +85,38 @@
         </div>
     </section>
 @endsection
+@push('addon-script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function password_show_hide() {
+            var x = document.getElementById("password");
+            var show_eye = document.getElementById("show_eye");
+            var hide_eye = document.getElementById("hide_eye");
+            hide_eye.classList.remove("d-none");
+            if (x.type === "password") {
+                x.type = "text";
+                show_eye.style.display = "none";
+                hide_eye.style.display = "block";
+            } else {
+                x.type = "password";
+                show_eye.style.display = "block";
+                hide_eye.style.display = "none";
+
+            }
+        }
+
+        $(document).ready(function() {
+            $('#show_password').click(function() {
+                var passwordField = $('#password');
+                var passwordFieldType = passwordField.attr('type');
+                if (passwordFieldType === 'password') {
+                passwordField.attr('type', 'text');
+                $(this).html('<img class="d-none" src="{{ URL::asset('assets/images/ic_eye_off.svg') }}" alt="" id="hide-eye">');
+                } else {
+                passwordField.attr('type', 'password');
+                $(this).html('<img src="{{ URL::asset('assets/images/ic_eye.svg') }}" alt="" id="show-eye">');
+                }
+            });
+        });
+    </script>
+@endpush
