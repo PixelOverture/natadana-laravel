@@ -14,6 +14,18 @@
                         </div>
                     </div>
                     @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible show fade">
+                            <div class="alert-body">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <ul class="list-unstyled">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                <ul>
+                            </div>
+                        </div>
+                    @endif
                     <div class="heading text-center">
                         <h3>Buat akun</h3>
                         <p>Buat akun untuk akses iAdmin</p>
