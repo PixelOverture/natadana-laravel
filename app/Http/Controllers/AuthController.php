@@ -20,6 +20,43 @@ class AuthController extends Controller
         return view('pages.auth.register');
     }
 
+    public function postLogin(Request $request)
+    {
+        // user login email
+        $user = User::where('email', $request->email)->first();
+        // user login username
+        $userUsername = User::where('username', $request->email)->first();
+
+        // check if user login email is exist
+        if ($user) {
+            // check if user login email is verified
+            if ($user->email_verified_at != null) {
+                // check if user login email is exist
+                if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+                    return redirect()->route('dashboard');
+                } else {
+                    return redirect()->back()->withErrors(['error' => 'Email atau password salah']);
+                }
+            } else {
+                return redirect()->back()->withErrors(['error' => 'Email belum diverifikasi']);
+            }
+        } else if ($userUsername) {
+            // check if user login username is verified
+            if ($userUsername->email_verified_at != null) {
+                // check if user login username is exist
+                if (auth()->attempt(['username' => $request->email, 'password' => $request->password])) {
+                    return redirect()->route('dashboard');
+                } else {
+                    return redirect()->back()->withErrors(['error' => 'Username atau password salah']);
+                }
+            } else {
+                return redirect()->back()->withErrors(['error' => 'Username belum diverifikasi']);
+            }
+        } else {
+            return redirect()->back()->withErrors(['error' => 'Email atau username tidak ditemukan']);
+        }
+    }
+
     public function postRegister(Request $request)
     {
         $user = new User();

@@ -1,0 +1,12 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_0_1271" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M74.4 0C99.584 0 120 20.416 120 45.6V74.4C120 99.584 99.584 120 74.4 120H45.6C20.4158 120 0 99.584 0 74.4V45.6C0 20.416 20.4158 0 45.6 0H74.4Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_1271)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-5 125H125V-5H-5V125Z" fill="#FAB005"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46.6523 32H73.3523C81.5025 32.0616 88.0602 38.7177 88.0007 46.868V64.92C88.029 68.8346 86.5015 72.6003 83.7537 75.3886C81.0059 78.177 77.2629 79.7595 73.3483 79.788H46.6523L31.9999 88V46.868C31.9715 42.9534 33.4991 39.1877 36.2469 36.3994C38.9947 33.611 42.7377 32.0285 46.6523 32Z" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M40.0005 56C40.0005 53.7909 41.7913 52 44.0005 52C46.2096 52 48.0005 53.7909 48.0005 56C48.0005 58.2091 46.2096 60 44.0005 60C42.9396 60 41.9222 59.5786 41.1721 58.8284C40.4219 58.0783 40.0005 57.0609 40.0005 56Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M56.0005 56C56.0005 53.7909 57.7913 52 60.0005 52C62.2096 52 64.0005 53.7909 64.0005 56C64.0005 58.2091 62.2096 60 60.0005 60C57.7913 60 56.0005 58.2091 56.0005 56Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M72 56C72 53.7909 73.7909 52 76 52C78.2091 52 80 53.7909 80 56C80 58.2091 78.2091 60 76 60C73.7909 60 72 58.2091 72 56Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

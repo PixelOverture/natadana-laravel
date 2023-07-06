@@ -9,15 +9,36 @@
             </div>
             <div class="col-lg-6">
                 <div class="auth-form">
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible show fade">
+                        <div class="alert-body">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            {{ $message }}
+                        </div>
+                    </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible show fade">
+                            <div class="alert-body">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <ul class="list-unstyled">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                <ul>
+                            </div>
+                        </div>
+                    @endif
                     <div class="heading text-center">
                         <h3>Selamat Datang!</h3>
                         <p>Silakan masukan data login anda</p>
                     </div>
-                    <form action="#" method="post">
+                    <form action="{{ route('post.login') }}" method="post">
+                        @csrf
                         <div class="mb-4">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Masukan email anda" />
+                                placeholder="Masukan email anda" value="{{ old('email') }}" />
                         </div>
                         <div class="mb-4">
                             <label for="password" class="form-label">Password</label>

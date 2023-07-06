@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +19,19 @@ Route::get('/', function () {
     return view('pages.landing');
 })->name('landing');
 
-Route::get('/email', function () {
-    return view('email.emailVerification');
-});
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
-Route::get('/email-verify/{email}', [Auth::class, 'emailVerify'])->name('email.verify');
+Route::get('/email-verify/{email}', [AuthController::class, 'emailVerify'])->name('email.verify');
 Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register');
+Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login');
+
+Route::post('/logout', function () {
+    auth()->logout();
+    return redirect()->route('landing');
+})->name('logout');
+
+// dahsboard in middleware auth
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});

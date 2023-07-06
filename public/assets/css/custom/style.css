@@ -1,0 +1,112 @@
+:root {
+    --color-green: #3ccf8e;
+    --color-lightBlue: #e4edf2;
+}
+
+.btn-green {
+    background-color: var(--color-green);
+    padding: 32px 64px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-green:hover {
+    background-color: #3ccf8e;
+    padding: 32px 64px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-lightBlue {
+    background-color: var(--color-lightBlue);
+    padding: 32px 64px;
+    color: #4c4c4c;
+    font-weight: bold;
+}
+
+.btn-lightBlue:hover {
+    background-color: #e4edf2;
+    padding: 32px 64px;
+    color: #4c4c4c;
+    font-weight: bold;
+}
+
+.pricing {
+    background-color: #edf0f2;
+}
+.pricing .content {
+    padding: 80px;
+}
+.pricing .content h2 {
+    font-size: 42px;
+    color: #242f40;
+}
+.pricing .content .features-list {
+    margin-top: 100px;
+}
+.pricing .content .features-list table {
+    border-bottom: 0px !important;
+    width: auto;
+}
+.pricing .content .features-list table th,
+.pricing .content .features-list table td {
+    border: 0px !important;
+}
+
+.hero-landing {
+    background: url(../../img/images/hero_landing.png);
+    background-size: cover;
+    margin-top: 200px;
+    height: 100vh;
+    padding: 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-landing .content h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+.hero-landing .content p {
+    color: #567592;
+    margin-top: 24px;
+}
+@media only screen and (max-width: 768px) {
+    .hero-landing {
+        background: none;
+        padding: 0px 20px;
+        height: auto;
+        align-items: flex-start;
+    }
+}
+
+.konsultasi {
+    margin-top: 200px;
+    padding: 0px 100px;
+}
+@media only screen and (max-width: 768px) {
+    .konsultasi {
+        margin-top: 100px;
+        padding: 0px 20px;
+    }
+    .konsultasi h2 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .konsultasi .icon--flexblox {
+        width: 20px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .konsultasi .icon--flexblox .icon {
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .konsultasi .left {
+        display: none;
+    }
+} /*# sourceMappingURL=style.css.map */
